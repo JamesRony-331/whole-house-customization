@@ -1,0 +1,1 @@
+<script setup>defineProps({title:String,description:String})</script><template><div class="page-head"><div><div style="font-size:12px;color:var(--muted)">管理端 / {{title}}</div><h1>{{title}}</h1><p v-if="description">{{description}}</p></div><div><slot/></div></div></template>

@@ -1,0 +1,13 @@
+<script setup>
+import { ref,onMounted,onBeforeUnmount,computed } from 'vue'
+const progress=ref(0)
+const update=()=>{const max=document.documentElement.scrollHeight-innerHeight;progress.value=max?Math.min(1,scrollY/max):0}
+onMounted(()=>{addEventListener('scroll',update,{passive:true});update()});onBeforeUnmount(()=>removeEventListener('scroll',update))
+const sceneStyle=computed(()=>({'--p':progress.value,'--scale':1.12-progress.value*.12,'--light':.42+progress.value*.46}))
+</script>
+<template><div class="showcase" :style="sceneStyle"><div class="showcase-sticky"><div class="showcase-image"></div><router-link to="/home" class="showcase-brand display-title">木序定制</router-link><div class="showcase-copy"><h1>空间，自有秩序</h1><p>为生活定制恰到好处的尺度</p></div><router-link to="/home" class="enter-link">进入木序定制 <span>→</span></router-link><div class="scroll-cue"><i></i>向下探索</div></div></div></template>
+<style scoped>
+.showcase{height:240vh;background:#171411;color:#f4efe7}.showcase-sticky{position:sticky;top:0;height:100vh;overflow:hidden}.showcase-image{position:absolute;inset:0;background:center/cover url('../assets/images/european-kitchen-hero.png');transform:scale(var(--scale));filter:brightness(var(--light)) saturate(.8);will-change:transform,filter}.showcase-image:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(23,20,17,.72),transparent 28%,transparent 72%,rgba(23,20,17,.62)),linear-gradient(0deg,rgba(23,20,17,.54),transparent 42%)}.showcase-brand{position:absolute;left:42px;top:30px;font-size:25px;z-index:2}.showcase-copy{position:absolute;inset:14vh 20px auto;text-align:center;z-index:2;transform:translateY(calc((1 - var(--p))*24px));opacity:calc(.35 + var(--p)*1.4)}.showcase-copy h1{font:500 clamp(46px,6vw,86px)/1.1 var(--font-display);letter-spacing:.08em;margin:0}.showcase-copy p{font:300 clamp(16px,1.8vw,24px)/1.5 var(--font-display);letter-spacing:.12em}.enter-link{position:absolute;z-index:2;left:50%;bottom:15%;transform:translateX(-50%);padding:13px 34px;border:1px solid rgba(244,239,231,.75);letter-spacing:.08em;background:rgba(23,20,17,.2)}.enter-link:hover{background:#f4efe7;color:#352820}.enter-link span{margin-left:16px}.scroll-cue{position:absolute;z-index:2;bottom:5%;left:50%;transform:translateX(-50%);font-size:12px;letter-spacing:.16em;text-align:center}.scroll-cue i{display:block;width:1px;height:32px;background:#f4efe7;margin:0 auto 8px}
+@media(max-width:700px){.showcase{height:170vh}.showcase-brand{left:20px;top:20px}.showcase-copy{top:18vh}.showcase-copy h1{font-size:46px}.showcase-image{background-position:58% center}}
+@media(prefers-reduced-motion:reduce){.showcase{height:100vh}.showcase-image{transform:none;filter:brightness(.75)}.showcase-copy{opacity:1;transform:none}}
+</style>

@@ -1,0 +1,25 @@
+export const routeRecords = [
+  { path: '/', name: 'showcase', component: () => import('../views/ShowcaseView.vue'), meta: { fullscreen: true } },
+  {
+    path: '/app',
+    component: () => import('../layouts/PublicLayout.vue'),
+    children: [
+      { path: '/home', name: 'home', component: () => import('../views/HomeView.vue') },
+      { path: '/products', name: 'products', component: () => import('../views/catalog/ProductListView.vue') },
+      { path: '/products/:id', name: 'product-detail', component: () => import('../views/catalog/ProductDetailView.vue') },
+      { path: '/cases', name: 'cases', component: () => import('../views/catalog/CaseListView.vue') },
+      { path: '/cases/:id', name: 'case-detail', component: () => import('../views/catalog/CaseDetailView.vue') },
+      { path: '/customize', name: 'customize', component: () => import('../views/customize/CustomizeView.vue') },
+      { path: '/customize/confirm', name: 'customize-confirm', component: () => import('../views/customize/CustomizeConfirmView.vue') },
+      { path: '/login', name: 'login', component: () => import('../views/auth/LoginView.vue') },
+      { path: '/register', name: 'register', component: () => import('../views/auth/RegisterView.vue') },
+      { path: '/workspace', name: 'workspace', component: () => import('../views/customer/WorkspaceView.vue') },
+      { path: '/orders', name: 'orders', component: () => import('../views/customer/OrderListView.vue') },
+      { path: '/orders/:id', name: 'order-detail', component: () => import('../views/customer/OrderDetailView.vue') },
+      { path: '/schemes/:id', name: 'scheme-detail', component: () => import('../views/customer/SchemeDetailView.vue') },
+      { path: '/assistant', name: 'assistant', component: () => import('../views/customer/AssistantView.vue') },
+      { path: '/profile', name: 'profile', component: () => import('../views/customer/ProfileView.vue') },
+      { path: '/:pathMatch(.*)*', name: 'not-found', component: () => import('../views/NotFoundView.vue') },
+    ],
+  },
+]

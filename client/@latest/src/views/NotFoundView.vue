@@ -1,0 +1,2 @@
+<template><div class="not-found"><div><span>404</span><h1>这处空间暂未规划</h1><p>您访问的页面不存在，或已调整到其他位置。</p><el-button type="primary" @click="$router.push('/home')">返回首页</el-button></div></div></template>
+<style scoped>.not-found{min-height:70vh;display:grid;place-items:center;text-align:center}.not-found span{font:500 80px var(--font-display);color:#c9b49e}.not-found h1{font:500 28px var(--font-display);margin:0}.not-found p{color:var(--c-muted);margin:12px 0 24px}</style>

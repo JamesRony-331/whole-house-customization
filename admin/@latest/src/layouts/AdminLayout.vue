@@ -1,0 +1,3 @@
+<script setup>import{ref}from'vue';import AdminSidebar from'../components/AdminSidebar.vue';import AdminHeader from'../components/AdminHeader.vue';const collapsed=ref(typeof window!=='undefined'&&window.matchMedia('(max-width:700px)').matches)</script>
+<template><div :class="['admin-layout',{collapsed}]"><AdminSidebar :collapsed="collapsed"/><div class="admin-main"><AdminHeader @toggle="collapsed=!collapsed"/><main><router-view/></main></div></div></template>
+<style scoped>.admin-layout{min-height:100vh}.admin-main{margin-left:var(--aside);min-width:0;transition:.2s}.collapsed{--aside:64px}@media(max-width:700px){.admin-main{margin-left:0}}</style>
