@@ -29,10 +29,11 @@ cp .env.example .env
 
 打开 `.env`，填写本机 MySQL 用户名和密码。真实 `.env` 不会提交到 GitHub。
 
-## 初始化数据库
+## 导入数据库
+
+创建 `whole_house_customization` 数据库后，导入项目后续提供的 SQL 文件。项目不使用 Django 迁移命令初始化演示数据库。
 
 ```bash
-python manage.py migrate
 python manage.py createsuperuser
 ```
 

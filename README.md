@@ -29,14 +29,13 @@ npm run dev
 
 ## 启动后端
 
-请先创建 MySQL 数据库并根据 `service/WholeHouse/.env.example` 创建本地 `.env`，然后执行：
+请先创建 MySQL 数据库、导入项目后续提供的 SQL 文件，并根据 `service/WholeHouse/.env.example` 创建本地 `.env`，然后执行：
 
 ```bash
 cd service/WholeHouse
 python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
-python manage.py migrate
 python manage.py runserver
 ```
 
