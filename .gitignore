@@ -26,3 +26,11 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+# Local thesis materials and design-process documents
+/已填写材料/
+/参考文献/
+/*.docx
+/docs/
+**/docs/
+**/.vscode/
+**/*布局与CSS实现说明.md
