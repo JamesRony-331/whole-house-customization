@@ -7,7 +7,7 @@
 ## 技术方案
 
 - Python 3.11 或更高版本
-- Django 5
+- Django 4.2 LTS
 - Django REST Framework
 - MySQL 8
 - PyMySQL
@@ -39,7 +39,6 @@ service/
     ├── customization/
     ├── orders/
     ├── production/
-    ├── inventory/
     └── service/
 ```
 
@@ -51,7 +50,6 @@ service/
 - `customization`：客户定制需求及尺寸、预算、偏好信息。
 - `orders`：订单和设计方案。
 - `production`：生产任务、工序进度和质检信息。
-- `inventory`：物料、库存阈值和供应商。
 - `service`：售后记录和投诉处理。
 
 ## 数据库配置
@@ -78,7 +76,6 @@ Django 使用 PyMySQL 作为 MySQL 驱动，并在 `config/__init__.py` 中执�
 - `/api/customizations/`：定制需求提交与管理。
 - `/api/orders/`、`/api/schemes/`：订单和方案管理。
 - `/api/production-tasks/`：生产任务管理。
-- `/api/materials/`、`/api/suppliers/`：物料与供应商管理。
 - `/api/after-sales/`：售后记录管理。
 
 接口采用 DRF ViewSet 与 Router。列表接口使用统一分页；成功和失败响应保持可预测结构。首期不强制修改现有 Vue 静态请求层，真实接口建成后再逐页接入。
@@ -120,4 +117,3 @@ Django 使用 PyMySQL 作为 MySQL 驱动，并在 `config/__init__.py` 中执�
 - 后续提交信息统一使用中文。
 - 每轮完成实现与验证后推送到 GitHub 的 `main` 分支。
 - 不把与当前任务无关的本地删除或修改混入提交。
-

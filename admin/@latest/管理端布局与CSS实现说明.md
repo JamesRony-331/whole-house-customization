@@ -8,4 +8,4 @@ Element Plus 的主色、字体、边框和填充颜色由根级 CSS 变量统�
 
 `src/request/request.js` 提供 `get/post/put/delete` Promise 接口，`src/data/index.js` 注册静态处理器，`src/api/admin.js` 提供页面使用的领域方法。接入 Django 时替换 request 内部发送逻辑即可，页面无需直接依赖静态数据。
 
-管理端不包含运营总览和数据分析模块，也不提供相关路由、导航或虚假统计数据。
+管理端不包含库存物料、供应商管理、运营总览和数据分析模块，也不提供相关路由、导航或虚假统计数据。

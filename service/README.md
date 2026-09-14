@@ -1,4 +1,3 @@
 # 后端服务
 
-此目录用于后续创建 Django 后端服务。目前尚未生成 Django 工程，先保留目录与用途说明，便于客户端、管理端和后端统一纳入版本管理。
-
+Django REST Framework 后端位于 `WholeHouse` 目录。完整配置和启动方法请查看 [WholeHouse/README.md](WholeHouse/README.md)。

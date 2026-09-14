@@ -30,8 +30,6 @@
 - `/orders/:id`：订单详情。
 - `/schemes`：设计方案审核。
 - `/production`：生产任务与工序进度。
-- `/materials`：库存与物料。
-- `/suppliers`：供应商管理。
 - `/service`：智能客服记录。
 - `/settings`：系统设置。
 - `/:pathMatch(.*)*`：404。
@@ -169,7 +167,7 @@
 
 - 管理端位于 `admin/@latest`，使用 JavaScript、Vue 3、Vue Router 和 Element Plus。
 - 端口固定为 `5172`，不影响客户端 `5173`。
-- 不存在运营总览和数据分析路由或导航。
+- 不存在库存物料、供应商管理、运营总览和数据分析路由或导航。
 - 登录后进入 `/requirements`。
 - 所有定义页面可访问，列表筛选、分页、对话框、抽屉和本地状态操作可用。
 - 页面数据经过静态 `request.js` 和领域 API。
