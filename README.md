@@ -29,7 +29,22 @@ npm run dev
 
 ## 启动后端
 
-请先创建 MySQL 数据库、导入项目后续提供的 SQL 文件，并根据 `service/WholeHouse/.env.example` 创建本地 `.env`，然后执行：
+请先创建 MySQL 数据库、导入项目后续提供的 SQL 文件，并根据 `service/WholeHouse/.env.example` 创建本地 `.env`。`.env` 需要放在 `service/WholeHouse/.env`，可填写为：
+
+```dotenv
+DJANGO_SECRET_KEY=请替换为随机且保密的字符串
+DJANGO_DEBUG=True
+DJANGO_ALLOWED_HOSTS=127.0.0.1,localhost
+DB_NAME=whole_house_customization
+DB_USER=root
+DB_PASSWORD=你的MySQL密码
+DB_HOST=127.0.0.1
+DB_PORT=3306
+```
+
+其中 `DB_USER` 和 `DB_PASSWORD` 必须与本机 MySQL 账号一致；数据库名如有调整，应同时修改 `DB_NAME`。完整字段说明见 `service/WholeHouse/README.md`。真实 `.env` 已被 Git 忽略，请勿上传密码和密钥。
+
+配置完成后执行：
 
 ```bash
 cd service/WholeHouse
