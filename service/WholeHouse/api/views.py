@@ -13,4 +13,3 @@ def health(request):
             "data": {"status": "ok", "service": "whole-house-api"},
         }
     )
-

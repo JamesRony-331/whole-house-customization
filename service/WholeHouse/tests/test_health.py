@@ -14,4 +14,3 @@ class HealthApiTests(SimpleTestCase):
                 "data": {"status": "ok", "service": "whole-house-api"},
             },
         )
-

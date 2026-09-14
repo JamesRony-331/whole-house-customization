@@ -6,4 +6,3 @@ from .views import health
 urlpatterns = [
     path("health/", health, name="health"),
 ]
-
